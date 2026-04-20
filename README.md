@@ -4,8 +4,26 @@ A local RAG (Retrieval-Augmented Generation) system that lets you upload large P
 
 ![QRAG Chat Screenshot](assets/Screenshot.png)
 
+## About the Knowledge Base
+
+The default knowledge base is the **Quran** — specifically the *ClearQuran* English translation by **Talal Itani**.
+
+| Detail | Info |
+|---|---|
+| Edition | ClearQuran (Edition A — uses "Allah") |
+| Translator | Talal Itani |
+| Pages | 254 |
+| Surahs | 114 |
+| Language | Modern English |
+| File | `PDF_Data/quran-english-translation-clearquran-edition-allah.pdf` |
+
+The Quran PDF is included in the repository so the system works immediately after cloning — no separate download needed. Just index it from the sidebar and start chatting.
+
+> You can also add any additional PDFs (tafsir, Islamic books, etc.) through the sidebar upload.
+
 ## Features
 
+- Quran reader built-in: browse all 114 surahs page by page with surah navigation
 - Upload any number of PDFs (tens of thousands of pages supported)
 - Reasoning model synthesises across the **whole** knowledge base — not just the nearest match
 - Persistent vector store: re-index is skipped for already-processed files
@@ -74,10 +92,12 @@ streamlit run app.py
 
 ```
 QRAG/
-├── app.py            # Streamlit UI
-├── rag_engine.py     # PDF extraction, vector store, reasoning RAG
-├── start.sh          # Convenience launch script
-├── assets/           # Screenshots and static assets
+├── app.py                  # Streamlit UI (chat + Quran reader tabs)
+├── rag_engine.py           # PDF extraction, vector store, reasoning RAG
+├── start.sh                # Convenience launch script
+├── PDF_Data/
+│   └── quran-english-translation-clearquran-edition-allah.pdf
+├── assets/                 # Screenshots
 ├── requirements.txt
 └── .gitignore
 ```

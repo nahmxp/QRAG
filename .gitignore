@@ -17,9 +17,8 @@ ENV/
 # ChromaDB persistent storage (user data — not for repo)
 chroma_db/
 
-# Uploaded / processed PDFs
+# ChromaDB is local-only; PDFs in PDF_Data/ are committed to the repo
 uploads/
-*.pdf
 
 # OS
 .DS_Store
